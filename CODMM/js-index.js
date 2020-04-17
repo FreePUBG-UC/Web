@@ -6,7 +6,7 @@ function queue(){
     var username = document.getElementById("username").value;
     console.log(ip);
 
-    if(ip!='undefined'){
+    if(typeof ip!='undefined'){
         $.ajax({url: `http://localhost:1000/addMeToQueue?username=${username}&ip=${ip}`, success: function(result){
         console.log(`${username} is added to the queue.`);
         }});
@@ -24,7 +24,7 @@ function queue(){
             
             console.log(`updating...`);
             if(result=="-1"){
-                alert("I AM SELECTED");
+                //alert("I AM SELECTED");
                 tresult = result;
                 $("#search-status").html(`You have a match!`);
             }    
