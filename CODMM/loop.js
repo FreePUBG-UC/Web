@@ -1,5 +1,3 @@
-console.log("Started server");
-
 const mysql = require('mysql');
 
 const express = require('express');
@@ -56,7 +54,7 @@ function python(data){
         playerTeam = ['allies','allies','axis','axis']
         `;
 
-        fs.writeFile("ipNames.py", "hi", function(err) {
+        fs.writeFile("ipNames.py", text, function(err) {
             if(err) {
                 return console.log(err);
             }
