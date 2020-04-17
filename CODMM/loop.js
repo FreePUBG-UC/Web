@@ -8,7 +8,7 @@ var cmd = `cmd`;
 var count = 0;
 var matchedKids;
 var lastSuccessCount = 0;
-var lastSuccessJSON = 0;
+var lastSuccessJSON = 0; //This also fixes the match found players problem
 
 //// ESTABLISH MYSQL CONNECTION
 var con = mysql.createConnection({
@@ -87,7 +87,7 @@ function countActivePlayers(){
                 var str = JSON.stringify(result);
                 matchedKids = JSON.parse(str);
         });
-        count = 0;
+        count -= 4;
     }
 }
 
