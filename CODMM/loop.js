@@ -1,14 +1,18 @@
-const mysql = require('mysql')
+console.log("Started server");
 
-const express = require('express')
-const app = express()
+const mysql = require('mysql');
+
+const express = require('express');
+const app = express();
+
+const fs = require('fs');
 
 var sql = `cmd`;
 var cmd = `cmd`;
 var count = 0;
 var matchedKids;
 var lastSuccessCount = 0;
-var lastSuccessJSON = 0; //This also fixes the match found players problem
+var lastSuccessJSON = 0; //This also fixes the [match found] players problem
 
 //// ESTABLISH MYSQL CONNECTION
 var con = mysql.createConnection({
@@ -38,12 +42,28 @@ function ourLoop(){
     setInterval(function() {
     //TODO:  
         countActivePlayers();
-        i = i + 1;               
+        i += 1;               
 
     }, 100);
 
 }
+function python(data){
+      
+        console.log("Trying to write") ;
+        text = `
+        playerIP = ['${data[0].username}','${data[1].username}','${data[2].username}','${data[3].username}'] \n
+        playerNames = ['${data[0].userip}','${data[1].userip}','${data[2].userip}','${data[3].userip}'] \n
+        playerTeam = ['allies','allies','axis','axis']
+        `;
 
+        fs.writeFile("ipNames.py", "hi", function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        } ); 
+    
+}
 function countActivePlayers(){
 
     cmd = `select count(0) from activePlayers`;     
@@ -86,10 +106,13 @@ function countActivePlayers(){
             if (err) throw err;
                 var str = JSON.stringify(result);
                 matchedKids = JSON.parse(str);
+                python(matchedKids);
         });
         count -= 4;
+        
     }
 }
+
 
 function mySqlFunction(cmd){
     
