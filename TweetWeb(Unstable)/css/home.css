@@ -1,0 +1,167 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #34495e;
+    font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+    line-height:1.3em;
+    margin:0;
+	transition:0.25s;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+    
+}
+
+#main-header{
+    background-color:#191919;
+    color:#3498db;
+    
+}
+
+#navbar ul{
+    padding:12px;
+    list-style:none;
+
+}
+
+#navbar li{
+    
+    float:right;
+}
+
+#navbar a{
+    color:#3498db;
+    text-decoration:none;
+    font-size:18px;
+    padding-right:20px;
+}
+
+#navbar #logo{
+    padding-right:40%;
+    float:left;
+}
+
+.tweet-form{
+    background-color:#34495e;
+    opacity:90%;
+    margin:auto;
+    width:70%;
+    padding:20px;
+
+    margin-top:1%;
+    
+    background: #191919;
+    text-align:center;
+    
+}
+
+.tweet-form input[id="tweet"]{
+    border:0;
+    background:none;
+    display:block;
+    margin:0px auto;
+    text-align:center;
+    border:2px solid #3498db;
+    padding: 14px 10px;
+    width: 60%;
+    outline:none;
+    color: white;
+    border-radius:24px;
+    transition : 0.25s;
+}
+
+.tweet-form input[id="tweet"]:focus{
+    width:90%;
+    border-color:#2ecc71;
+}
+
+#tweets{
+    list-style:none;
+}
+
+.tweet-container{
+    background-color:#34495e;
+    opacity:60%;
+    margin:auto;
+    width:70%;
+    padding:20px;
+    margin-top:1%;
+    background: #191919;
+    padding-top:1px;
+}
+
+.tweet-container h4{
+    color:#3498db;
+    opacity:100%;
+    text-align:left;
+    font-size:18px;
+
+
+}
+
+.tweet-container .message{
+    color:white;
+    font-size:14px;
+    margin:0;
+}
+
+.tweet-container .time-date{
+    color:#3498db;
+    font-size:14px;
+    text-align:right;
+    margin:0;
+    
+}
+
+#ol-style{
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column-reverse;
+}
+
+#ol-style .tweet-container li{
+    background-color:#34495e;
+    opacity:60%;
+    margin:auto;
+    width:70%;   
+    background: #191919;
+    float:left;
+}
+#ol-style .tweet-container h4{
+    color:#3498db;
+    opacity:100%;
+    text-align:left;
+    font-size:18px;
+}
+
+#ol-style .tweet-container .message{
+    color:white;
+    font-size:14px;
+    margin:0;
+    opacity:100%;
+}
+
+.tweet-form .buttonTweetIt{
+    border:0;
+    background:none;
+    display:block;
+    margin:10px auto;
+    text-align:center;
+    border:1px solid #2ecc71;
+    padding: 6px 30px;
+    outline:none;
+    color: white;
+    border-radius:24px;
+    transition : 0.25s;
+    cursor:pointer;
+}
+
+.tweet-form .buttonTweetIt:hover{
+    background: #2ecc71
+}
